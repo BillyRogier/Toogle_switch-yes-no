@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #201e35;
+}
+
+.main{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+input {
+  display: none;
+}
+
+div,
+label {
+  border-radius: 50px;
+  transition: all .5s;
+}
+
+div {
+  height: 100px;
+  width: 200px;
+  background: #726767;
+  position: relative;
+}
+
+label {
+  height: 80px;
+  width: 80px;
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+label::before {
+  content: '';
+  height: 60px;
+  width: 5px;
+  position: absolute;
+  top: calc(50% - 30px);
+  left: calc(50% - 2.5px);
+  transform: rotate(45deg);
+}
+
+label::after {
+  content: '';
+  height: 5px;
+  width: 60px;
+  position: absolute;
+  top: calc(50% - 2.5px);
+  left: calc(50% - 30px);
+  transform: rotate(45deg);
+}
+
+label::before,
+label::after{
+  background: #726767;
+  border-radius: 5px;
+}
+
+input:checked ~ div {
+    background: #2a4dc7;
+    box-shadow: 0 0 2px #2a4dc7;
+}
+
+input:checked ~ div label {
+  left: 110px;
+  transform: rotate(360deg);
+}
+
+input:checked ~ div label::before{
+  height: 50px;
+  top: calc(55% - 25px);
+  left: calc(60% - 2.5px);
+  background: #2a4dc7;
+}
+input:checked ~ div label::after{
+  width: 20px;
+  top: calc(95% - 25px);
+  left: calc(22.5% - 2.5px);
+  background: #2a4dc7;
+}
